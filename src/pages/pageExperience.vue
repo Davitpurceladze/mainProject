@@ -95,16 +95,34 @@
         @blur="validateExperienceDescription"
       />
     </div>
+  </form>
+  <div
+    v-show="
+      this.resume.position != null &&
+      this.resume.employer != null &&
+      this.resume.experienceStartingDate != null &&
+      this.resume.experienceEndDate != null &&
+      this.resume.experienceDescription != null
+    "
+  >
     <router-link to="/pageEducation">
       <button class="toTheNextPage"><span>შემდეგი</span></button>
     </router-link>
-    <router-link to="/pagePersonal">
-      <button class="backToPreviousPage"><span>უკან</span></button>
-    </router-link>
-  </form>
-  <!-- <router-link to="/pageExperience">
-    <button class="nextToExperience"><a>შემდეგი</a></button>
-  </router-link> -->
+  </div>
+  <div
+    v-show="
+      this.resume.position == null ||
+      this.resume.employer == null ||
+      this.resume.experienceStartingDate == null ||
+      this.resume.experienceEndDate == null ||
+      this.resume.experienceDescription == null
+    "
+  >
+    <button class="toTheNextPage"><span>შემდეგი</span></button>
+  </div>
+  <router-link to="/pagePersonal">
+    <button class="backToPreviousPage"><span>უკან</span></button>
+  </router-link>
 
   <the-resume
     :name="resume.userName"
