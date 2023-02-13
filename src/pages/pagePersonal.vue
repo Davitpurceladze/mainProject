@@ -5,6 +5,7 @@
     <img src="../assets/Vector.jpg" class="homeButton" @click="clearData" />
   </router-link>
   <the-line></the-line>
+
   <form>
     <div
       class="user-name"
@@ -121,11 +122,34 @@
       />
     </div>
 
-    <router-link to="/pageExperience">
+    <div
+      v-if="
+        this.resume.userName != null &&
+        this.resume.surname != null &&
+        this.resume.imageUrl != null &&
+        this.resume.email != null &&
+        this.resume.phoneNumber != null
+      "
+    >
+      <router-link to="/pageExperience">
+        <button type="button" class="toTheNextPage">
+          <span>შემდეგი</span>
+        </button>
+      </router-link>
+    </div>
+    <div
+      v-if="
+        this.resume.userName == null ||
+        this.resume.surname == null ||
+        this.resume.imageUrl == null ||
+        this.resume.email == null ||
+        this.resume.phoneNumber == null
+      "
+    >
       <button type="button" class="toTheNextPage">
         <span>შემდეგი</span>
       </button>
-    </router-link>
+    </div>
   </form>
 
   <the-resume
@@ -167,10 +191,9 @@ export default {
         positionValidity: 'pending',
         employerValidity: 'pending',
       },
-
-      imagePreview: null,
     };
   },
+
   methods: {
     clearData() {
       localStorage.clear();
