@@ -1,0 +1,18 @@
+.schoolPR {
+  position: absolute;
+  width: 349px;
+  height: 20px;
+  left: 80px;
+  top: 625px;
+
+  font-family: 'HelveticaNeue';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  /* off black */
+
+  color: #1a1a1a;
+}

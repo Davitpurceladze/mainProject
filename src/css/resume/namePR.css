@@ -1,0 +1,16 @@
+.namePR {
+  position: absolute;
+  width: 123px;
+  height: 42px;
+  left: 80px;
+  top: 68px;
+
+  font-family: 'HelveticaNeue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  /* identical to box height */
+
+  color: #f93b1d;
+}

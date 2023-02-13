@@ -1,0 +1,18 @@
+.schoolDescriptionPR {
+  position: absolute;
+  width: 662px;
+  height: 88px;
+  left: 80px;
+  top: 687px;
+
+  font-family: 'HelveticaNeue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* or 138% */
+
+  text-transform: lowercase;
+
+  color: #000000;
+}

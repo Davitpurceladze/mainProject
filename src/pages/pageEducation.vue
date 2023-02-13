@@ -92,9 +92,33 @@
       <button class="backToPreviousPage"><span>უკან</span></button>
     </router-link>
   </form>
-  <button class="finishButton" @click="uploadFilesToServer">
-    <span>დასრულება</span>
-  </button>
+  <div
+    v-show="
+      this.resume.school != null &&
+      this.resume.degrees != null &&
+      this.resume.degreesEndDate != null &&
+      this.resume.schoolDescription != null
+    "
+  >
+    <router-link to="/pageResume">
+      <button class="finishButton">
+        <span>დასრულება</span>
+      </button>
+    </router-link>
+  </div>
+
+  <div
+    v-show="
+      this.resume.school == null ||
+      this.resume.degrees == null ||
+      this.resume.degreesEndDate == null ||
+      this.resume.schoolDescription == null
+    "
+  >
+    ><button class="finishButton">
+      <span>დასრულება</span>
+    </button>
+  </div>
 
   <the-resume
     :name="resume.userName"
@@ -151,13 +175,6 @@ export default {
     };
   },
   methods: {
-    uploadFilesToServer() {
-      fetch('https://resume.redberryinternship.ge/api/cvs', {
-        method: 'post',
-        headers: { 'content-type': 'multipart/form-data' },
-        body: {},
-      });
-    },
     validateSchoolDescription() {
       if (this.resume.schoolDescription?.match(/^[a-zA-Z]{2,}$/)) {
         localStorage.setItem(

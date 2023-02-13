@@ -1,0 +1,17 @@
+.emailPR {
+  position: absolute;
+  width: 187px;
+  height: 21px;
+  left: 111px;
+  top: 127px;
+
+  font-family: 'HelveticaNeue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  /* off black */
+
+  color: #1a1a1a;
+}
